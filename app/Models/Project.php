@@ -22,6 +22,7 @@ class Project extends Model
         'description',
         'is_visible',
         'team_id',
+        'partner_id'
     ];
 
     /**
@@ -44,4 +45,6 @@ class Project extends Model
     {
         return $this->belongsToMany(Technology::class, 'project_technology');
     }
+
+    public function partner() { return $this->belongsTo(Partner::class); }
 }

@@ -20,5 +20,8 @@ class DatabaseSeeder extends Seeder
             TechnologiesSeeder::class,
             ProjectsSeeder::class,
         ]);
+
+        \App\Models\Partner::create(['name' => 'Microsoft', 'country' => 'USA']);
+        \App\Models\Partner::create(['name' => 'Indra', 'country' => 'Spain']);
     }
 }

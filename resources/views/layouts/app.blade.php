@@ -24,10 +24,10 @@
                             </div>
                         </div>
                         <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
-                            <a class="hover:text-slate-900" href="#">Projectes</a>
+                            <a class="hover:text-slate-900" href="{{ route('projects.index') }}">Projectes</a>
                             <a class="hover:text-slate-900" href="#">Equips</a>
-                            <a class="hover:text-slate-900" href="#">Tecnologies</a>
-                            <a class="hover:text-slate-900" href="#">Partners</a>
+                            <a class="hover:text-slate-900" href="#">Tecnologies</a> 
+                            <a class="hover:text-slate-900" href="#">Partners</a>    
                         </nav>
                         <div class="flex items-center gap-3">
                             @auth
