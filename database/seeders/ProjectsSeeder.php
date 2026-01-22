@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Project;
 use App\Models\Team;
 use App\Models\Technology;
+use App\Models\Partner;
 use Illuminate\Database\Seeder;
 
 class ProjectsSeeder extends Seeder
@@ -16,6 +17,7 @@ class ProjectsSeeder extends Seeder
     {
         $teams = Team::query()->pluck('id', 'name');
         $technologies = Technology::query()->pluck('id', 'name');
+        $partners = Partner::query()->pluck('id');
 
         $projects = [
             [
@@ -173,6 +175,10 @@ class ProjectsSeeder extends Seeder
         foreach ($projects as $data) {
             $technologyNames = $data['technologies'];
             unset($data['technologies']);
+
+            if ($partners->isNotEmpty()) {
+                $data['partner_id'] = $partners->random();
+            }
 
             $project = Project::query()->create($data);
             $technologyIds = collect($technologyNames)

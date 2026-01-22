@@ -18,10 +18,13 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             TeamsSeeder::class,
             TechnologiesSeeder::class,
-            ProjectsSeeder::class,
         ]);
 
         \App\Models\Partner::create(['name' => 'Microsoft', 'country' => 'USA']);
         \App\Models\Partner::create(['name' => 'Indra', 'country' => 'Spain']);
+    
+        $this->call([
+            ProjectsSeeder::class,
+        ]);
     }
 }

@@ -87,6 +87,7 @@ class ProjectController extends Controller
 
     public function destroy(Project $project)
     {
+        Gate::authorize('delete', $project);
         $project->delete();
         return redirect()->route('projects.index')->with('success', 'Eliminado.');
     }
